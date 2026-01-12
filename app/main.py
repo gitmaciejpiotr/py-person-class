@@ -16,7 +16,8 @@ def create_person_list(people: list) -> list:
         add_spouse(person) for person in people
     ]
 
-def add_spouse(person) -> object:
+
+def add_spouse(person: object) -> object:
     person_obj = Person.people[person["name"]]
     if person.get("wife") and person.get("wife") is not None:
         person_obj.wife = Person.people[person["wife"]]
