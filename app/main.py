@@ -9,8 +9,10 @@ class Person:
 
 
 def create_person_list(people: list) -> list:
-    {person["name"]: Person(person["name"], person["age"])
-     for person in people}
+    Person.people.clear()
+
+    for person in people:
+        Person(person["name"], person["age"])
 
     return [
         add_spouse(person) for person in people
@@ -19,8 +21,9 @@ def create_person_list(people: list) -> list:
 
 def add_spouse(person: object) -> object:
     person_obj = Person.people[person["name"]]
-    if person.get("wife") and person.get("wife") is not None:
+    if person.get("wife"):
         person_obj.wife = Person.people[person["wife"]]
-    elif person.get("husband") and person.get("husband") is not None:
+    elif person.get("husband"):
         person_obj.husband = Person.people[person["husband"]]
     return person_obj
+
