@@ -24,10 +24,3 @@ def create_person_list(people: list) -> list:
 
     return people_obj_list
 
-people = [
-    {"name": "Ross", "age": 30, "wife": "Rachel"},
-    {"name": "Joey", "age": 29, "wife": None},
-    {"name": "Rachel", "age": 28, "husband": "Ross"}
-]
-
-print(create_person_list(people))
