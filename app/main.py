@@ -26,4 +26,3 @@ def add_spouse(person: object) -> object:
     elif person.get("husband"):
         person_obj.husband = Person.people[person["husband"]]
     return person_obj
-
