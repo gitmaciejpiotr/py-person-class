@@ -1,7 +1,7 @@
 class Person:
     people = {}
 
-    def __init__(self, name, age):
+    def __init__(self, name: str, age: int) -> None:
         self.name = name
         self.age = age
         Person.people[self.name] = self
@@ -11,7 +11,8 @@ class Person:
 def create_person_list(people: list) -> list:
     people_obj_list = []
 
-    {person["name"]: Person(person["name"], person["age"]) for person in people}
+    {person["name"]: Person(person["name"], person["age"])
+     for person in people}
 
     for person in people:
         person_objt = Person.people[person["name"]]
@@ -23,4 +24,3 @@ def create_person_list(people: list) -> list:
         people_obj_list.append(person_objt)
 
     return people_obj_list
-
